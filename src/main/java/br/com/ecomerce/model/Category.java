@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import br.com.ecomerce.dto.CategoryFormDto;
+
 @Entity
 public class Category {
 
@@ -38,5 +40,10 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public Category dtoToModel(CategoryFormDto obj) {
+		this.name = obj.getName();
+		return this;
 	}
 }

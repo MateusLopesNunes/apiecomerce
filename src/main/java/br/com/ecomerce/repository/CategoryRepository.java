@@ -6,13 +6,12 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
+import br.com.ecomerce.model.Category;
 import br.com.ecomerce.model.Product;
 
-@Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
-	
-	@Query("select p from Product p where p.name like %:name%")
-	Optional<List<Product>> findByName(@Param("name") String name);
+public interface CategoryRepository extends JpaRepository<Category, Long> {
+
+	@Query("select c from Category c where c.name like %:name%")
+	Optional<List<Category>> findByName(@Param("name") String name);
 }

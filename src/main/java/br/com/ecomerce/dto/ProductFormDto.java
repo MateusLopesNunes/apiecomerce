@@ -3,19 +3,22 @@ package br.com.ecomerce.dto;
 import java.math.BigDecimal;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 public class ProductFormDto {
 	
-	@NotBlank
+	@NotBlank @Length(min = 5)
 	private String name;
 	
-	@NotBlank
+	@NotNull
 	private Integer quantityPerStock;
 	
-	@NotBlank
+	@NotBlank @Length(min = 5)
 	private String description;
 	
-	@NotBlank
+	@NotNull
 	private BigDecimal value;
 
 	public String getName() {

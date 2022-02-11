@@ -8,19 +8,10 @@ import br.com.ecomerce.model.Product;
 
 public class ProductDetailsDto {
 	
-	@NotBlank
 	private Long id;
-	
-	@NotBlank
 	private String name;
-	
-	@NotBlank
 	private Integer quantityPerStock;
-	
-	@NotBlank
 	private String description;
-	
-	@NotBlank
 	private BigDecimal value;
 	
 	public ProductDetailsDto(Product obj) {
